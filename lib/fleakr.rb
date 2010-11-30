@@ -1,6 +1,6 @@
 $:.unshift(File.dirname(__FILE__))
 
-gem 'activesupport', '~> 2.3.0'
+# gem 'activesupport', '~> 2.3.0'
 
 require 'uri'
 require 'cgi'
@@ -12,15 +12,15 @@ require 'forwardable'
 require 'active_support/core_ext/array'
 require 'active_support/core_ext/module'
 
-begin
-  # ActiveSupport < 2.3.5
-  require 'active_support/core_ext/blank'
-rescue NameError
-  # ActiveSupport >= 2.3.5 will raise a NameError exception
-  require 'active_support/core_ext/object/blank'
-end
+require 'active_support/core_ext/object/blank'
 
-require 'active_support/core_ext/time'
+require 'active_support/core_ext/time/acts_like'
+require 'active_support/core_ext/time/calculations'
+require 'active_support/core_ext/time/conversions'
+require 'active_support/core_ext/time/marshal'
+require 'active_support/core_ext/time/publicize_conversion_methods'
+require 'active_support/core_ext/time/zones'
+require 'active_support/lazy_load_hooks'
 require 'active_support/inflector'
 require 'active_support/core_ext/string'
 
